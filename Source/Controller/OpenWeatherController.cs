@@ -16,9 +16,9 @@ namespace SimpleWeather.Source.Controller
                 .Build();
         }
 
-        public async Task<WeatherForecast?> GetWeatherResponse()
+        public async Task<WeatherForecast?> GetWeatherResponse(string cityName = "Lovech", string units = "metric")
         {
-            var baseAddress = new Uri(_baseUrl + "&appid=" + Configuration["openWeatherApiKey"] + "&units=metric");
+            var baseAddress = new Uri(_baseUrl + cityName + "&appid=" + Configuration["openWeatherApiKey"] + $"&units={units}");
 
             var client = new HttpClient()
             {

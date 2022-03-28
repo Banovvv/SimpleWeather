@@ -1,8 +1,10 @@
-﻿namespace SimpleWeather
+﻿using Newtonsoft.Json.Linq;
+
+namespace SimpleWeather
 {
     internal class Rain
     {
-        public Rain()
+        public Rain(JToken token)
         {
 
         }

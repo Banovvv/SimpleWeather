@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace SimpleWeather
 {
     internal class Coordinates
     {
-        public Coordinates()
+        public Coordinates(JToken token)
         {
 
         }

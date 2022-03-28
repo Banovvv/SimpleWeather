@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Newtonsoft.Json.Linq;
 
 namespace SimpleWeather
 {
     internal class Snow
     {
-        public Snow()
+        public Snow(JToken token)
         {
 
         }

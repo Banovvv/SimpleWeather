@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.Configuration;
-using Newtonsoft.Json;
 using System.Web.Http;
 
 namespace SimpleWeather.Controller
@@ -16,7 +15,7 @@ namespace SimpleWeather.Controller
                 .Build();
         }
 
-        public async Task<WeatherForecast?> GetWeatherResponse(string cityName = "Lovech", string units = "metric")
+        public async Task<CurrentWeather?> GetWeatherResponse(string cityName = "Lovech", string units = "metric")
         {
             var baseAddress = new Uri(_baseUrl + cityName + "&appid=" + Configuration["openWeatherApiKey"] + $"&units={units}");
 
@@ -29,9 +28,9 @@ namespace SimpleWeather.Controller
 
             var jsonContent = await weatherResponse.Content.ReadAsStringAsync();
 
-            WeatherForecast? weatherForecast = JsonConvert.DeserializeObject<WeatherForecast>(jsonContent);
+            CurrentWeather? currentWeather = new CurrentWeather(jsonContent);
 
-            return weatherForecast;
+            return currentWeather;
         }
     }
 }

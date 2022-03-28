@@ -13,7 +13,13 @@ namespace SimpleWeather
             }
         }
 
-        public double Latitude { get; set; }
+        /// <summary>
+        /// City geo location, longitude
+        /// </summary>
         public double Longitude { get; set; }
+        /// <summary>
+        /// City geo location, latitude
+        /// </summary>
+        public double Latitude { get; set; }
     }
 }

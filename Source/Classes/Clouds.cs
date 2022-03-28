@@ -12,6 +12,9 @@ namespace SimpleWeather
             }
         }
 
+        /// <summary>
+        /// Cloudiness, %
+        /// </summary>
         public double Cloudiness { get; set; }
     }
 }

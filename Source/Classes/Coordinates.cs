@@ -2,7 +2,7 @@
 
 namespace SimpleWeather
 {
-    internal class Coordinates
+    public class Coordinates
     {
         public Coordinates(JToken data)
         {
@@ -12,7 +12,7 @@ namespace SimpleWeather
                 Latitude = double.Parse(data.SelectToken("lat").ToString()); 
             }
         }
-
+        
         /// <summary>
         /// City geo location, longitude
         /// </summary>

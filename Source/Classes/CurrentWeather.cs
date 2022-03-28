@@ -2,7 +2,7 @@
 
 namespace SimpleWeather
 {
-    internal class CurrentWeather
+    public class CurrentWeather
     {
         public CurrentWeather(string jsonResponse)
         {
@@ -47,7 +47,10 @@ namespace SimpleWeather
         public Rain Rain { get; set; }
         public Snow Snow { get; set; }
         public Sys Sys { get; set; }
-        public int Timezone { get; set; } // UTC +/-
+        /// <summary>
+        /// UTC (+/-) hour/s
+        /// </summary>
+        public int Timezone { get; set; }
         public int CityID { get; set; }
         public string City { get; set; }
         public int StatusCode { get; set; }

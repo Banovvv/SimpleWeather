@@ -3,7 +3,7 @@ using System.Web.Http;
 
 namespace SimpleWeather.Controller
 {
-    internal class WeatherController : ApiController
+    public class WeatherController : ApiController
     {
         public static string _baseUrl = $"https://api.openweathermap.org/data/2.5/weather?q=";
         public new IConfiguration Configuration { get; private set; }

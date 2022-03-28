@@ -2,7 +2,7 @@
 
 namespace SimpleWeather
 {
-    internal class Rain
+    public class Rain
     {
         public Rain(JToken data)
         {

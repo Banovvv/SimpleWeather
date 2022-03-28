@@ -2,7 +2,7 @@
 
 namespace SimpleWeather
 {
-    internal class Wind
+    public class Wind
     {
         public Wind(JToken data)
         {

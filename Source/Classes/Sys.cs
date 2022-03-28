@@ -2,7 +2,7 @@
 
 namespace SimpleWeather
 {
-    internal class Sys
+    public class Sys
     {
         public Sys(JToken data)
         {

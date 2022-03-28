@@ -1,9 +1,8 @@
 ﻿using Newtonsoft.Json.Linq;
-using System.Globalization;
 
 namespace SimpleWeather
 {
-    internal class Snow
+    public class Snow
     {
         public Snow(JToken data)
         {

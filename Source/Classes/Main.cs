@@ -4,7 +4,7 @@ namespace SimpleWeather
 {
     internal class Main
     {
-        public Main(JToken token)
+        public Main(JToken data)
         {
 
         }

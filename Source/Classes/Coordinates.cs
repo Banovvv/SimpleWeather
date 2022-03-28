@@ -1,17 +1,16 @@
 ﻿using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SimpleWeather
 {
     internal class Coordinates
     {
-        public Coordinates(JToken token)
+        public Coordinates(JToken data)
         {
-
+            if (data != null)
+            {
+                Longitude = double.Parse(data.SelectToken("lon").ToString());
+                Latitude = double.Parse(data.SelectToken("lat").ToString()); 
+            }
         }
 
         public double Latitude { get; set; }

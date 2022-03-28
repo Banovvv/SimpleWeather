@@ -16,17 +16,17 @@ namespace SimpleWeather
             }
         }
 
-        public int Type { get; set; }
-        public int ID { get; set; }
-        public string Country { get; set; }
+        public int Type { get; }
+        public int ID { get; }
+        public string Country { get; }
         /// <summary>
         /// Sunrise time converted to your local time
         /// </summary>
-        public DateTime Sunrise { get; set; }
+        public DateTime Sunrise { get; }
         /// <summary>
         /// Sunset time converted to your local time
         /// </summary>
-        public DateTime Sunset { get; set; }
+        public DateTime Sunset { get; }
 
         public static DateTime UnixToDateTime(double unixTime)
         {

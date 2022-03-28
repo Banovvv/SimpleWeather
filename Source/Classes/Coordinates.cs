@@ -16,10 +16,10 @@ namespace SimpleWeather
         /// <summary>
         /// City geo location, longitude
         /// </summary>
-        public double Longitude { get; set; }
+        public double Longitude { get; }
         /// <summary>
         /// City geo location, latitude
         /// </summary>
-        public double Latitude { get; set; }
+        public double Latitude { get; }
     }
 }

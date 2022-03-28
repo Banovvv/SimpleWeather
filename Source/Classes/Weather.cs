@@ -18,18 +18,18 @@ namespace SimpleWeather
         /// <summary>
         /// Weather condition ID
         /// </summary>
-        public int ID { get; set; }
+        public int ID { get; }
         /// <summary>
         /// Group of weather parameters (Rain, Snow, Extreme etc.)
         /// </summary>
-        public string Main { get; set; }
+        public string Main { get; }
         /// <summary>
         /// Weather condition within the group
         /// </summary>
-        public string Description { get; set; }
+        public string Description { get; }
         /// <summary>
         /// Weather icon ID
         /// </summary>
-        public string Icon { get; set; }
+        public string Icon { get; }
     }
 }

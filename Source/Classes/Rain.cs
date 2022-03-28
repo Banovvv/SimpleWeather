@@ -22,10 +22,10 @@ namespace SimpleWeather
         /// <summary>
         /// Rain volume for the last 1 hour, mm
         /// </summary>
-        public double OneHour { get; set; }
+        public double OneHour { get; }
         /// <summary>
         /// Rain volume for the last 3 hours, mm
         /// </summary>
-        public double ThreeHours { get; set; }
+        public double ThreeHours { get; }
     }
 }

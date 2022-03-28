@@ -28,34 +28,34 @@ namespace SimpleWeather
         /// <summary>
         /// Temperature. Default Unit: Celsius
         /// </summary>
-        public double Temperature { get; set; }
+        public double Temperature { get; }
         /// <summary>
         /// Temperature. This temperature parameter accounts for the human perception of weather. Default Unit: Celsius
         /// </summary>
-        public double FeelsLike { get; set; }
+        public double FeelsLike { get; }
         /// <summary>
         /// Minimum temperature at the moment. This is minimal currently observed temperature (within large megalopolises and urban areas). Default Unit: Celsius
         /// </summary>
-        public double TemperatureMin { get; set; }
+        public double TemperatureMin { get; }
         /// <summary>
         /// Maximum temperature at the moment. This is maximal currently observed temperature (within large megalopolises and urban areas). Default Unit: Celsius
         /// </summary>
-        public double TemperatureMax { get; set; }
+        public double TemperatureMax { get; }
         /// <summary>
         /// Atmospheric pressure (on the sea level, if there is no SeaLevel or GroundLevel data), hPa
         /// </summary>
-        public double Pressure { get; set; }
+        public double Pressure { get; }
         /// <summary>
         /// Humidity, %
         /// </summary>
-        public double Humidity { get; set; }
+        public double Humidity { get; }
         /// <summary>
         /// Atmospheric pressure on the sea level, hPa
         /// </summary>
-        public double SeaLevel { get; set; }
+        public double SeaLevel { get; }
         /// <summary>
         /// Atmospheric pressure on the ground level, hPa
         /// </summary>
-        public double GroundLevel { get; set; }
+        public double GroundLevel { get; }
     }
 }

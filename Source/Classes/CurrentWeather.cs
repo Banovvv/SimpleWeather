@@ -37,22 +37,22 @@ namespace SimpleWeather
             }
         }
 
-        public Coordinates Coordinates { get; set; }
-        public Weather Weather { get; set; }
-        public string Base { get; set; }
-        public Main Main { get; set; }
-        public double Visibility { get; set; }
-        public Wind Wind { get; set; }
-        public Clouds Clouds { get; set; }
-        public Rain Rain { get; set; }
-        public Snow Snow { get; set; }
-        public Sys Sys { get; set; }
+        public Coordinates Coordinates { get; }
+        public Weather Weather { get; }
+        public string Base { get; }
+        public Main Main { get; }
+        public double Visibility { get; }
+        public Wind Wind { get; }
+        public Clouds Clouds { get; }
+        public Rain Rain { get; }
+        public Snow Snow { get; }
+        public Sys Sys { get; }
         /// <summary>
         /// UTC (+/-) hour/s
         /// </summary>
-        public int Timezone { get; set; }
-        public int CityID { get; set; }
-        public string City { get; set; }
-        public int StatusCode { get; set; }
+        public int Timezone { get; }
+        public int CityID { get; }
+        public string City { get; }
+        public int StatusCode { get; }
     }
 }

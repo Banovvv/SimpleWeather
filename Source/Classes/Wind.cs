@@ -19,14 +19,14 @@ namespace SimpleWeather
         /// <summary>
         /// Wind speed. Default Unit: meter/sec
         /// </summary>
-        public double Speed { get; set; }
+        public double Speed { get; }
         /// <summary>
         /// Wind direction, degrees (meteorological)
         /// </summary>
-        public double Degree { get; set; }
+        public double Degree { get; }
         /// <summary>
         /// Wind gust. Default Unit: meter/sec
         /// </summary>
-        public double Gust { get; set; }
+        public double Gust { get; }
     }
 }

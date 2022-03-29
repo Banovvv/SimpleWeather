@@ -1,7 +1,7 @@
 # SimpleWeather
 
 ## Summary
-This is a <b>.NET</b> 6 project that provides simple means of obtaining weather data from the [OpenWeatherMap's API](https://openweathermap.org/api).
+This is a C# (.NET 6) library that provides simple means of obtaining weather data from the [OpenWeatherMap's API](https://openweathermap.org/api).
 
 ## Status
 [![NuGet Badge](https://buildstats.info/nuget/SimpleWeather)](https://www.nuget.org/packages/SimpleWeather/1.0.0)

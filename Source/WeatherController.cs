@@ -3,16 +3,17 @@ using System.Web.Http;
 
 namespace SimpleWeather
 {
-    public class SimpleWeather : ApiController
+    public class WeatherController : ApiController
     {
-        public static string _baseUrl = $"https://api.openweathermap.org/data/2.5/weather?q=";
-        public new IConfiguration Configuration { get; private set; }
+        private static string _baseUrl = $"https://api.openweathermap.org/data/2.5/weather?q=";
+        public new IConfiguration Configuration { get; }
 
-        public SimpleWeather() : base()
+        public WeatherController() : base()
         {
             Configuration = new ConfigurationBuilder()
-                .AddJsonFile("appsettings.json", true)
-                .Build();
+                                    .SetBasePath(Directory.GetCurrentDirectory())
+                                    .AddJsonFile("appsettings.json", true)
+                                    .Build();
         }
 
         public async Task<CurrentWeather?> GetWeatherResponse(string cityName = "Lovech", string units = "metric")

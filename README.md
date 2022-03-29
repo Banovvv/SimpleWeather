@@ -9,7 +9,7 @@ This is a <b>.NET</b> 6 project that provides simple means of obtaining weather 
 ## Methods
 At this point there is only one <b>asynchronous</b> method which returns and Object containing all the data for the current weather in a given city:
 ```Csharp
-GetCurrentWeatherResponse()
+GetCurrentWeatherResponse(string city, string units)
 ```
 ## Prerequisites
 In order for the library to work you need to have a <b>appsettings.json</b> file (containing your [OpenWeatherMap's API KEY](https://openweathermap.org/api)) in your project's output directory containing the following:

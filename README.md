@@ -47,3 +47,5 @@ Package Manager:
 
 ## License
 Copyright © 2022 Ivan Gechev.
+
+This package has MIT license. Refer to the [LICENSE](https://github.com/Banovvv/SimpleWeather/blob/a7b24c51d62e71722899b42aded8e48fb6c8fe7e/LICENSE) for detailed information.

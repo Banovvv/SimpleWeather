@@ -4,7 +4,7 @@
 This is a <b>.NET</b> 6 project that provides simple means of obtaining weather data from the [OpenWeatherMap's API](https://openweathermap.org/api).
 
 ## Status
-// TODO
+[![NuGet Badge](https://buildstats.info/nuget/SimpleWeather)](https://www.nuget.org/packages/SimpleWeather/1.0.0)
 
 ## Methods
 At this point there is only one <b>asynchronous</b> method which returns and Object containing all the data for the current weather in a given city:
@@ -37,12 +37,12 @@ You can install the NuGet library into your project using:
 
 Package Manager:
 ```
-//TODO
+Install-Package SimpleWeather -Version 1.0.0
 ```
 
 .NET CLI:
 ```
-//TODO
+dotnet add package SimpleWeather --version 1.0.0
 ```
 
 ## License

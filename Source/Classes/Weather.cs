@@ -8,10 +8,10 @@ namespace SimpleWeather
         {
             if (data != null)
             {
-                ID = int.Parse(data.SelectToken("id").ToString());
-                Main = data.SelectToken("main").ToString();
-                Description = data.SelectToken("description").ToString();
-                Icon = data.SelectToken("icon").ToString();
+                ID = int.Parse(data.FirstOrDefault().SelectToken("id").ToString());
+                Main = data.FirstOrDefault().SelectToken("main").ToString();
+                Description = data.FirstOrDefault().SelectToken("description").ToString();
+                Icon = data.FirstOrDefault().SelectToken("icon").ToString();
             }
         }
 

@@ -32,7 +32,7 @@ namespace SimpleWeather
                 Sys = new Sys(data.SelectToken("sys"));
                 Timezone = int.Parse(data.SelectToken("timezone").ToString()) / 360;
                 CityID = int.Parse(data.SelectToken("id").ToString());
-                City = data.SelectToken("city").ToString();
+                City = data.SelectToken("name").ToString();
                 StatusCode = statusCode;
             }
         }

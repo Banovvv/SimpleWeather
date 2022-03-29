@@ -11,6 +11,7 @@ namespace SimpleWeather
                 Type = int.Parse(data.SelectToken("type").ToString());
                 ID = int.Parse(data.SelectToken("id").ToString());
                 Country = data.SelectToken("country").ToString();
+                // TODO: Extract only time
                 Sunrise = UnixToDateTime(double.Parse(data.SelectToken("sunrise").ToString()));
                 Sunset = UnixToDateTime(double.Parse(data.SelectToken("sunset").ToString()));
             }

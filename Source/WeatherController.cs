@@ -16,6 +16,12 @@ namespace SimpleWeather
                                     .Build();
         }
 
+        /// <summary>
+        /// Returns an object that contains all the relevant data for the current weather in a given city
+        /// </summary>
+        /// <param name="cityName">The name of the city</param>
+        /// <param name="units">Optional parameter, by default it is set to "metric"</param>
+        /// <returns>A <see cref="CurrentWeather"/> object</returns>
         public async Task<CurrentWeather?> GetCurrentWeatherResponse(string cityName = "Lovech", string units = "metric")
         {
             var baseAddress = new Uri(_baseUrl + cityName + "&appid=" + Configuration["openWeatherApiKey"] + $"&units={units}");

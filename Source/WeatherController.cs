@@ -5,7 +5,7 @@ namespace SimpleWeather
 {
     public class WeatherController : ApiController
     {
-        private static string _baseUrl = $"https://api.openweathermap.org/data/2.5/weather?q=";
+        private static string _baseUrl = $"https://api.openweathermap.org/data/2.5/";
         public new IConfiguration Configuration { get; }
 
         public WeatherController() : base()
@@ -22,9 +22,9 @@ namespace SimpleWeather
         /// <param name="cityName">The name of the city</param>
         /// <param name="units">Optional parameter, by default it is set to "metric"</param>
         /// <returns>A <see cref="CurrentWeather"/> object</returns>
-        public async Task<CurrentWeather?> GetCurrentWeatherResponse(string cityName = "Lovech", string units = "metric")
+        public async Task<CurrentWeather> GetCurrentWeather(string cityName, string units = "metric")
         {
-            var baseAddress = new Uri(_baseUrl + cityName + "&appid=" + Configuration["openWeatherApiKey"] + $"&units={units}");
+            var baseAddress = new Uri(_baseUrl + "weather?q=" + cityName + "&appid=" + Configuration["openWeatherApiKey"] + $"&units={units}");
 
             var client = new HttpClient()
             {
@@ -35,9 +35,27 @@ namespace SimpleWeather
 
             var jsonContent = await weatherResponse.Content.ReadAsStringAsync();
 
-            CurrentWeather? currentWeather = new CurrentWeather(jsonContent);
+            CurrentWeather currentWeather = new CurrentWeather(jsonContent);
 
             return currentWeather;
+        }
+
+        public async Task<WeatherForecast> GetWeatherForecast(double lat, double lon, string units = "metric")
+        {
+            var baseAddress = new Uri(_baseUrl + "onecall?lat=" + lat + "&lon=" + lon + "&exclude=minutely" + "&appid=" + Configuration["openWeatherApiKey"] + $"&units={units}");
+
+            var client = new HttpClient()
+            {
+                BaseAddress = baseAddress
+            };
+
+            HttpResponseMessage weatherResponse = await client.GetAsync(baseAddress);
+
+            var jsonContent = await weatherResponse.Content.ReadAsStringAsync();
+
+            WeatherForecast weatherForecast = new WeatherForecast(jsonContent);
+
+            return weatherForecast;
         }
     }
 }

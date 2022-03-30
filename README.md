@@ -1,18 +1,18 @@
 # SimpleWeather
 
 ## Summary
-This is a C# (.NET 6) library that provides simple means of obtaining weather data from the [OpenWeatherMap's API](https://openweathermap.org/api).
+This is a <strong>C# (.NET 6)</strong> library that provides simple means of obtaining weather data from the [OpenWeatherMap's API](https://openweathermap.org/api).
 
 ## Status
 [![NuGet Badge](https://buildstats.info/nuget/SimpleWeather)](https://www.nuget.org/packages/SimpleWeather/1.0.0)
 
 ## Methods
-At this point there is only one <b>asynchronous</b> method which returns and Object containing all the data for the current weather in a given city:
+At this point there is only one <strong>asynchronous</strong> method which returns an Object containing all the data for the current weather in a given city:
 ```Csharp
 GetCurrentWeatherResponse(string city, string units)
 ```
 ## Prerequisites
-In order for the library to work you need to have a <b>appsettings.json</b> file (containing your [OpenWeatherMap's API KEY](https://openweathermap.org/api)) in your project's output directory containing the following:
+In order for the library to work you need to have an <strong>appsettings.json</strong> file containing your [OpenWeatherMap's API KEY](https://openweathermap.org/api) in your project's output directory with the following parameter:
 ```Json
 {
   "openWeatherApiKey": "YourKeyGoesHere"
@@ -27,7 +27,11 @@ var weatherController = new WeatherController();
 var currentWeather = await weatherController.GetCurrentWeatherResponse("Lovech", "metric");
 
 
-Console.WriteLine($"The current temperature in {currentWeather.City} is {currentWeather.Main.Temperature} degrees.");
+Console.WriteLine($"The current weather in {currentWeather.City} is {currentWeather.Main.Temperature} degrees with {currentWeather.Weather.Description}");
+```
+This will produce the following result:
+```
+The current weather in Lovech is 5.43 degrees with overcast clouds.
 ```
 
 ## Installation

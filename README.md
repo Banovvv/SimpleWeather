@@ -7,9 +7,15 @@ This is a <strong>C# (.NET 6)</strong> library that provides simple means of obt
 [![NuGet Badge](https://buildstats.info/nuget/SimpleWeather)](https://www.nuget.org/packages/SimpleWeather/1.0.0)
 
 ## Methods
-At this point there is only one <strong>asynchronous</strong> method which returns an Object containing all the data for the current weather in a given city:
+There are two <strong>asynchronous</strong> methods which return an Object containing all the weather data for a given city:
+Current weather data:
 ```Csharp
-GetCurrentWeatherResponse(string city, string units)
+GetCurrentWeather(string city, string units)
+```
+Weather forecast data:
+```Csharp
+GetWeatherForecast(string cityName, string units)
+GetWeatherForecast(double lat, double lon, string units)
 ```
 ## Prerequisites
 In order for the library to work you need to have an <strong>appsettings.json</strong> file containing your [OpenWeatherMap's API KEY](https://openweathermap.org/api) in your project's output directory with the following parameter:
@@ -68,12 +74,12 @@ You can install the NuGet library into your project using:
 
 Package Manager:
 ```
-Install-Package SimpleWeather -Version 1.0.0
+Install-Package SimpleWeather -Version 2.0.0
 ```
 
 .NET CLI:
 ```
-dotnet add package SimpleWeather --version 1.0.0
+dotnet add package SimpleWeather --version 2.0.0
 ```
 
 ## License

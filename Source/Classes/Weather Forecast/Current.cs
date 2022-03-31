@@ -25,6 +25,8 @@ namespace SimpleWeather
                     WindGust = double.Parse(data.SelectToken("wind_gust").ToString());
                 }
                 WindDegee = double.Parse(data.SelectToken("wind_deg").ToString());
+                WindDirectionShort = Wind.GetWindDirectionShort(WindDegee);
+                WindDirectionLong = Wind.GetWindDirectionLong(WindDegee);
                 if (data.SelectToken("rain") != null)
                 {
                     Rain = new Rain(data.SelectToken("rain"));
@@ -51,6 +53,8 @@ namespace SimpleWeather
         public double WindSpeed { get; }
         public double? WindGust { get; }
         public double WindDegee { get; }
+        public string WindDirectionShort { get; }
+        public string WindDirectionLong { get; }
         public Rain? Rain { get; }
         public Snow? Snow { get; }
         public Weather? Weather { get; }

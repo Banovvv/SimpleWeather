@@ -20,11 +20,13 @@ namespace SimpleWeather
                 Humidity = double.Parse(data.SelectToken("humidity").ToString());
                 DewPoint = double.Parse(data.SelectToken("dew_point").ToString());
                 WindSpeed = double.Parse(data.SelectToken("wind_speed").ToString());
-                if (data.SelectToken("wind_speed") != null)
+                if (data.SelectToken("wind_gust") != null)
                 {
                     WindGust = double.Parse(data.SelectToken("wind_gust").ToString());
                 }
                 WindDegee = double.Parse(data.SelectToken("wind_deg").ToString());
+                WindDirectionShort = Wind.GetWindDirectionShort(WindDegee);
+                WindDirectionLong = Wind.GetWindDirectionLong(WindDegee);
                 Clouds = double.Parse(data.SelectToken("clouds").ToString());
                 Uvi = double.Parse(data.SelectToken("uvi").ToString());
                 PrecipitationProbability = double.Parse(data.SelectToken("pop").ToString()) * 100;
@@ -54,6 +56,8 @@ namespace SimpleWeather
         public double WindSpeed { get; }
         public double WindGust { get; }
         public double WindDegee { get; }
+        public string WindDirectionShort { get; }
+        public string WindDirectionLong { get; }
         public double Clouds { get; }
         public double Uvi { get; }
         /// <summary>

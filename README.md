@@ -14,7 +14,7 @@ GetCurrentWeather(string city, string units)
 ```
 Weather forecast data:
 ```Csharp
-GetWeatherForecast(string cityName, string units)
+GetWeatherForecast(string city, string units)
 GetWeatherForecast(double lat, double lon, string units)
 ```
 ## Prerequisites

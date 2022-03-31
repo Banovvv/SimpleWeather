@@ -20,7 +20,7 @@ namespace SimpleWeather
                 Uvi = double.Parse(data.SelectToken("uvi").ToString());
                 Visibility = double.Parse(data.SelectToken("visibility").ToString());
                 WindSpeed = double.Parse(data.SelectToken("wind_speed").ToString());
-                if (data.SelectToken("wind_speed") != null)
+                if (data.SelectToken("wind_gust") != null)
                 {
                     WindGust = double.Parse(data.SelectToken("wind_gust").ToString());
                 }

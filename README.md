@@ -24,14 +24,41 @@ In order for the library to work you need to have an <strong>appsettings.json</s
 using SimpleWeather;
 
 var weatherController = new WeatherController();
-var currentWeather = await weatherController.GetCurrentWeatherResponse("Lovech", "metric");
+var currentWeather = await weatherController.GetCurrentWeather("Lovech", "metric");
+var weatherForecast = await weatherController.GetWeatherForecast(43.1333, 24.7167);
 
+Console.WriteLine($"The current weather in {currentWeather.City} is {currentWeather.Main.Temperature} degrees with {currentWeather.Weather.Description}.");
 
-Console.WriteLine($"The current weather in {currentWeather.City} is {currentWeather.Main.Temperature} degrees with {currentWeather.Weather.Description}");
+Console.WriteLine("The weather forecast for Lovech for the next 7 days is:");
+
+foreach (var day in weatherForecast.Daily)
+{
+    Console.WriteLine($"The weather for: {day.DT.ToString("d")}");
+    Console.WriteLine($"Min temperature: {day.Temperature.Min}");
+    Console.WriteLine($"Max temperature: {day.Temperature.Max}");
+    Console.WriteLine($"The weather conditions will be: {day.Weather.Description}");
+    Console.WriteLine($"Probability for precipitation: {day.PrecipitationProbability}%");
+}
 ```
 This will produce the following result:
 ```
-The current weather in Lovech is 5.43 degrees with overcast clouds. 
+The current weather in Lovech is 11.43 degrees with overcast clouds.
+
+The weather forecast for the next 7 days is:
+
+The weather for: 02.04.2022
+Min temperature: 7.03
+Max temperature: 20.52
+The weather conditions will be: heavy intensity rain
+Probability for precipitation: 100%
+.
+.
+.
+The weather for: 07.04.2022
+Min temperature: 9.34
+Max temperature: 17.91
+The weather conditions will be: moderate rain
+Probability for precipitation: 95%
 ```
 
 ## Installation

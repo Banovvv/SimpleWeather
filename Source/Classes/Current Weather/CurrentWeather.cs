@@ -2,6 +2,9 @@
 
 namespace SimpleWeather
 {
+    /// <summary>
+    /// An object that provides current weather data
+    /// </summary>
     public class CurrentWeather
     {
         public CurrentWeather(string jsonResponse)

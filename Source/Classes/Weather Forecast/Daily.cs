@@ -27,7 +27,7 @@ namespace SimpleWeather
                 WindDegee = double.Parse(data.SelectToken("wind_deg").ToString());
                 Clouds = double.Parse(data.SelectToken("clouds").ToString());
                 Uvi = double.Parse(data.SelectToken("uvi").ToString());
-                PrecipitationProbability = double.Parse(data.SelectToken("pop").ToString());
+                PrecipitationProbability = double.Parse(data.SelectToken("pop").ToString()) * 100;
                 if (data.SelectToken("rain") != null)
                 {
                     Rain = double.Parse(data.SelectToken("rain").ToString());
@@ -56,6 +56,9 @@ namespace SimpleWeather
         public double WindDegee { get; }
         public double Clouds { get; }
         public double Uvi { get; }
+        /// <summary>
+        /// Probability of precipitation in percents. The values of the parameter vary between 0 and 100
+        /// </summary>
         public double PrecipitationProbability { get; }
         public double? Rain { get; }
         public double? Snow { get; }

@@ -2,6 +2,9 @@
 
 namespace SimpleWeather
 {
+    /// <summary>
+    /// An object that provides weather forecast data
+    /// </summary>
     public class WeatherForecast
     {
         public WeatherForecast(string jsonResponse)
@@ -32,14 +35,37 @@ namespace SimpleWeather
                 }
             }
         }
-
+        /// <summary>
+        /// Geographical coordinates of the location (latitude)
+        /// </summary>
         public double Latitude { get; }
+        /// <summary>
+        /// Geographical coordinates of the location (longitude)
+        /// </summary>
         public double Longitude { get; }
+        /// <summary>
+        /// Timezone name for the requested location
+        /// </summary>
         public string? Timezone { get; }
+        /// <summary>
+        /// Shift in hours from UTC
+        /// </summary>
         public int TimezoneOffset { get; }
+        /// <summary>
+        /// Current weather data as an object
+        /// </summary>
         public Current? Current { get; }
+        /// <summary>
+        /// Hourly forecast weather data as a list of objects containing the data for each hour
+        /// </summary>
         public List<Hourly>? Hourly { get; } = new List<Hourly>();
+        /// <summary>
+        /// Daily forecast weather data as a list of objects containing the data for each day
+        /// </summary>
         public List<Daily>? Daily { get; } = new List<Daily>();
+        /// <summary>
+        /// A list of objects containing National weather alerts data from major national weather warning systems
+        /// </summary>
         public List<Alerts>? Alerts { get; } = new List<Alerts>();
     }
 }

@@ -4,7 +4,7 @@
 This is a <strong>C# (.NET 6)</strong> library that provides simple means of obtaining weather data from the [OpenWeatherMap's API](https://openweathermap.org/api).
 
 ## Status
-[![NuGet Badge](https://buildstats.info/nuget/SimpleWeather)](https://www.nuget.org/packages/SimpleWeather/1.0.0)
+[![NuGet Badge](https://buildstats.info/nuget/SimpleWeather)](https://www.nuget.org/packages/SimpleWeather/2.0.0)
 
 ## Methods
 There are two <strong>asynchronous</strong> methods which return an Object containing all the weather data for a given city:

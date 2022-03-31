@@ -19,7 +19,9 @@ namespace SimpleWeather
                 Clouds = double.Parse(data.SelectToken("clouds").ToString());
                 Visibility = double.Parse(data.SelectToken("visibility").ToString());
                 WindSpeed = double.Parse(data.SelectToken("wind_speed").ToString());
-                if (data.SelectToken("wind_speed") != null)
+                WindDirectionShort = Wind.GetWindDirectionShort(WindDegee);
+                WindDirectionLong = Wind.GetWindDirectionLong(WindDegee);
+                if (data.SelectToken("wind_gust") != null)
                 {
                     WindGust = double.Parse(data.SelectToken("wind_gust").ToString());
                 }
@@ -49,6 +51,8 @@ namespace SimpleWeather
         public double WindSpeed { get; }
         public double WindGust { get; }
         public double WindDegee { get; }
+        public string WindDirectionShort { get; }
+        public string WindDirectionLong { get; }
         public double PrecipitationProbability { get; }
         public Rain? Rain { get; }
         public Snow? Snow { get; }

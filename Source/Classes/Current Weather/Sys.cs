@@ -8,10 +8,15 @@ namespace SimpleWeather
         {
             if (data != null)
             {
-                Type = int.Parse(data.SelectToken("type").ToString());
-                ID = int.Parse(data.SelectToken("id").ToString());
+                if (data.SelectToken("type") != null)
+                {
+                    Type = int.Parse(data.SelectToken("type").ToString()); 
+                }
+                if (data.SelectToken("id") != null)
+                {
+                    ID = int.Parse(data.SelectToken("id").ToString()); 
+                }
                 Country = data.SelectToken("country").ToString();
-                // TODO: Extract only time
                 Sunrise = UnixToDateTime(double.Parse(data.SelectToken("sunrise").ToString()));
                 Sunset = UnixToDateTime(double.Parse(data.SelectToken("sunset").ToString()));
                 SunriseTime = DateTimeToSimpleTime(Sunrise);
@@ -19,8 +24,8 @@ namespace SimpleWeather
             }
         }
 
-        public int Type { get; }
-        public int ID { get; }
+        public int? Type { get; }
+        public int? ID { get; }
         public string Country { get; }
         /// <summary>
         /// A DateTime object representing sunrise time converted to your local time

@@ -6,6 +6,9 @@ This is a <strong>C# (.NET 6)</strong> library that provides simple means of obt
 ## Status
 [![NuGet Badge](https://buildstats.info/nuget/SimpleWeather)](https://www.nuget.org/packages/SimpleWeather)
 
+## Upcomming features
+Currenlty in development is the option to get wind direction, both short (SSW) and long(South-southwest), based on the ```WindDegree``` paramater. There will be a total of 16 possible wind directions.
+
 ## Methods
 There are two <strong>asynchronous</strong> methods which return an Object containing all the weather data for a given city:
 Current weather data:

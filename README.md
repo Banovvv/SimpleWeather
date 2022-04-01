@@ -92,3 +92,6 @@ This package has MIT license. Refer to the [LICENSE](https://github.com/Banovvv/
 
 ## Questions, comments or additions
 If you have a feature request or bug report, [open a new Issue](https://github.com/Banovvv/SimpleWeather/issues/new) or [send a Pull request](https://github.com/Banovvv/SimpleWeather/pulls).
+
+## Support
+If you like this project, give it a ⭐ and share it with friends!

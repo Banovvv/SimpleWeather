@@ -5,8 +5,8 @@ namespace SimpleWeather
 {
     public class WeatherController : ApiController
     {
-        private static string _baseUrl = $"https://api.openweathermap.org/data/2.5/";
-        public new IConfiguration Configuration { get; }
+        private readonly string _baseUrl = $"https://api.openweathermap.org/data/2.5/";
+        private new IConfiguration Configuration { get; }
 
         public WeatherController() : base()
         {
@@ -40,6 +40,13 @@ namespace SimpleWeather
             return currentWeather;
         }
 
+        /// <summary>
+        /// Returns an object that contains all the relevant weather forecast data for a given latitude and longitude
+        /// </summary>
+        /// <param name="lat">Latitude of the location</param>
+        /// <param name="lon">Longitude of the location</param>
+        /// <param name="units">Optional parameter, by default it is set to "metric"</param>
+        /// <returns>A <see cref="WeatherForecast"/> object</returns>
         public async Task<WeatherForecast> GetWeatherForecast(double lat, double lon, string units = "metric")
         {
             var baseAddress = new Uri(_baseUrl + "onecall?lat=" + lat + "&lon=" + lon + "&exclude=minutely" + "&appid=" + Configuration["openWeatherApiKey"] + $"&units={units}");
@@ -57,6 +64,13 @@ namespace SimpleWeather
 
             return weatherForecast;
         }
+
+        /// <summary>
+        /// Returns an object that contains all the relevant weather forecast data for a given city
+        /// </summary>
+        /// <param name="cityName">The name of the city</param>
+        /// <param name="units">Optional parameter, by default it is set to "metric"</param>
+        /// <returns>A <see cref="WeatherForecast"/> object</returns>
         public async Task<WeatherForecast> GetWeatherForecast(string cityName, string units = "metric")
         {
             var currentCity = await GetCurrentWeather(cityName, units);

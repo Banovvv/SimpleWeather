@@ -29,7 +29,7 @@ namespace SimpleWeather
                 WindDirectionLong = Wind.GetWindDirectionLong(WindDegee);
                 Clouds = double.Parse(data.SelectToken("clouds").ToString());
                 Uvi = double.Parse(data.SelectToken("uvi").ToString());
-                PrecipitationProbability = double.Parse(data.SelectToken("pop").ToString()) * 100;
+                PrecipitationProbability = Math.Round(double.Parse(data.SelectToken("pop").ToString()) * 100);
                 if (data.SelectToken("rain") != null)
                 {
                     Rain = double.Parse(data.SelectToken("rain").ToString());

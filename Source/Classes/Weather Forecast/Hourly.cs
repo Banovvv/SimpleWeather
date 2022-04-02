@@ -26,7 +26,7 @@ namespace SimpleWeather
                     WindGust = double.Parse(data.SelectToken("wind_gust").ToString());
                 }
                 WindDegee = double.Parse(data.SelectToken("wind_deg").ToString());
-                PrecipitationProbability = double.Parse(data.SelectToken("pop").ToString());
+                PrecipitationProbability = Math.Round(double.Parse(data.SelectToken("pop").ToString()) * 100);
                 if (data.SelectToken("rain") != null)
                 {
                     Rain = new Rain(data.SelectToken("rain"));
@@ -53,6 +53,9 @@ namespace SimpleWeather
         public double WindDegee { get; }
         public string WindDirectionShort { get; }
         public string WindDirectionLong { get; }
+        /// <summary>
+        /// Probability of precipitation in percents. The values of the parameter vary between 0 and 100
+        /// </summary>
         public double PrecipitationProbability { get; }
         public Rain? Rain { get; }
         public Snow? Snow { get; }

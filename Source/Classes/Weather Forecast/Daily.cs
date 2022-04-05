@@ -50,7 +50,7 @@ namespace SimpleWeather
         /// <summary>
         /// Moon phase
         /// </summary>
-        public string MoonPhase { get; }
+        public string? MoonPhase { get; }
         public Temperature? Temperature { get; }
         public FeelsLike? FeelsLike { get; }
         public double Pressure { get; }
@@ -59,8 +59,8 @@ namespace SimpleWeather
         public double WindSpeed { get; }
         public double WindGust { get; }
         public double WindDegee { get; }
-        public string WindDirectionShort { get; }
-        public string WindDirectionLong { get; }
+        public string? WindDirectionShort { get; }
+        public string? WindDirectionLong { get; }
         public double Clouds { get; }
         public double Uvi { get; }
         /// <summary>

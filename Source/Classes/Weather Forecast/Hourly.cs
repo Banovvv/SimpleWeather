@@ -51,8 +51,8 @@ namespace SimpleWeather
         public double WindSpeed { get; }
         public double WindGust { get; }
         public double WindDegee { get; }
-        public string WindDirectionShort { get; }
-        public string WindDirectionLong { get; }
+        public string? WindDirectionShort { get; }
+        public string? WindDirectionLong { get; }
         /// <summary>
         /// Probability of precipitation in percents. The values of the parameter vary between 0 and 100
         /// </summary>

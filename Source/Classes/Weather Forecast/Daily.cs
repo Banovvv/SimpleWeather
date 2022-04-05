@@ -13,7 +13,7 @@ namespace SimpleWeather
                 Sunset = UnixToDateTime(double.Parse(data.SelectToken("sunset").ToString()));
                 Moonrise = UnixToDateTime(double.Parse(data.SelectToken("moonrise").ToString()));
                 Moonset = UnixToDateTime(double.Parse(data.SelectToken("moonset").ToString()));
-                MoonPhase = double.Parse(data.SelectToken("moon_phase").ToString());
+                MoonPhase = DoubleToMoonPhase(double.Parse(data.SelectToken("moon_phase").ToString()));
                 Temperature = new Temperature(data.SelectToken("temp"));
                 FeelsLike = new FeelsLike(data.SelectToken("feels_like"));
                 Pressure = double.Parse(data.SelectToken("pressure").ToString());
@@ -47,7 +47,10 @@ namespace SimpleWeather
         public DateTime Sunset { get; }
         public DateTime Moonrise { get; }
         public DateTime Moonset { get; }
-        public double MoonPhase { get; }
+        /// <summary>
+        /// Moon phase
+        /// </summary>
+        public string MoonPhase { get; }
         public Temperature? Temperature { get; }
         public FeelsLike? FeelsLike { get; }
         public double Pressure { get; }
@@ -72,6 +75,50 @@ namespace SimpleWeather
         {
             DateTime epoch = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
             return epoch.AddSeconds(unixTime).ToLocalTime();
+        }
+
+        private static string DoubleToMoonPhase(double phase)
+        {
+            string moonPhase = string.Empty;
+
+            if (phase >= 0.000 && phase <= 0.062)
+            {
+                moonPhase = "New Moon";
+            }
+            else if(phase > 0.062 && phase < 0.187)
+            {
+                moonPhase = "Waxing Crescent";
+            }
+            else if(phase >= 0.187 && phase <= 0.312)
+            {
+                moonPhase = "First Quarter";
+            }
+            else if (phase > 0.312 && phase < 0.437)
+            {
+                moonPhase = "Waxing Gibbous";
+            }
+            else if (phase >= 0.437 && phase <= 0.562)
+            {
+                moonPhase = "Full Moon";
+            }
+            else if (phase > 0.562 && phase < 0.687)
+            {
+                moonPhase = "Waning Gibbous";
+            }
+            else if (phase >= 0.687 && phase <= 0.812)
+            {
+                moonPhase = "Last Quarter";
+            }
+            else if (phase > 0.812 && phase < 0.938)
+            {
+                moonPhase = "Waning Crescent";
+            }
+            else if (phase >= 0.938 && phase <= 1.000)
+            {
+                moonPhase = "New Moon";
+            }
+
+            return moonPhase;
         }
     }
 }

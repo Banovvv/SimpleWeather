@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <PackageId>SimpleWeather</PackageId>
-    <Version>2.0.0</Version>
+    <Version>2.5.0</Version>
     <Product>SimpleWeather</Product>
     <Company>Ivan Gechev</Company>
     <Authors>Ivan Gechev</Authors>
@@ -14,7 +14,7 @@
     <Copyright>Copyright © 2022 Ivan Gechev</Copyright>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/Banovvv/SimpleWeather</RepositoryUrl>
-    <PackageReleaseNotes>2.0.0: Introducd the ability to get a weather forecast</PackageReleaseNotes>
+    <PackageReleaseNotes>2.5.0: Introduced wind direction as string (both short and long). Updated MoonPhase to string (used to be a double).</PackageReleaseNotes>
     <PackageIcon>SimpleWeather.png</PackageIcon>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>

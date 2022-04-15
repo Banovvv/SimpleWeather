@@ -26,11 +26,11 @@ namespace SimpleWeather
         /// Wind direction, degrees (meteorological)
         /// </summary>
         public double Degree { get; }
+        public string WindDirectionShort { get; }
+        public string WindDirectionLong { get; }
         /// <summary>
         /// Wind gust. Default Unit: meter/sec
         /// </summary>
-        public string WindDirectionShort { get; }
-        public string WindDirectionLong { get; }
         public double Gust { get; }
 
         public static string GetWindDirectionShort(double windDegree)

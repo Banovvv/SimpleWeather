@@ -56,8 +56,17 @@ namespace SimpleWeather
         public double Pressure { get; }
         public double Humidity { get; }
         public double DewPoint { get; }
+        /// <summary>
+        /// Wind speed. Default Unit: meter/sec
+        /// </summary>
         public double WindSpeed { get; }
+        /// <summary>
+        /// Wind gust. Default Unit: meter/sec
+        /// </summary>
         public double WindGust { get; }
+        /// <summary>
+        /// Wind direction, degrees (meteorological)
+        /// </summary>
         public double WindDegee { get; }
         public string? WindDirectionShort { get; }
         public string? WindDirectionLong { get; }

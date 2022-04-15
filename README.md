@@ -7,7 +7,7 @@ This is a <strong>C# (.NET 6)</strong> library that provides simple means of obt
 [![NuGet Badge](https://buildstats.info/nuget/SimpleWeather)](https://www.nuget.org/packages/SimpleWeather)
 
 ## Upcomming features
-Currenlty in development is the option to get wind direction, both short (SSW) and long (South-southwest), based on the ```WindDegree``` paramater. There will be a total of 16 possible wind directions.
+*No upcomming features right now*
 
 ## Methods
 There are two <strong>asynchronous</strong> methods which return an Object containing all the weather data for a given city:
@@ -34,40 +34,49 @@ using SimpleWeather;
 
 var weatherController = new WeatherController();
 var currentWeather = await weatherController.GetCurrentWeather("Lovech", "metric");
-var weatherForecast = await weatherController.GetWeatherForecast(43.1333, 24.7167);
+var weatherForecast = await weatherController.GetWeatherForecast("Lovech");
 
-Console.WriteLine($"The current weather in {currentWeather.City} is {currentWeather.Main.Temperature} degrees with {currentWeather.Weather.Description}.");
+Console.WriteLine($"The current weather in {currentWeather.City} is {Math.Round(currentWeather.Main.Temperature)}°C degrees with {currentWeather.Weather.Description}.\n");
 
-Console.WriteLine("The weather forecast for Lovech for the next 7 days is:");
+Console.WriteLine("The weather forecast for the next 7 days is:\n");
 
 foreach (var day in weatherForecast.Daily)
 {
-    Console.WriteLine($"The weather for: {day.DT.ToString("d")}");
-    Console.WriteLine($"Min temperature: {day.Temperature.Min}");
-    Console.WriteLine($"Max temperature: {day.Temperature.Max}");
+    Console.WriteLine($"The weather for: {day.DT.ToString("dd.MM.yyyy")}");
+    Console.WriteLine($"Min temperature: {Math.Round(day.Temperature.Min)}°C");
+    Console.WriteLine($"Max temperature: {Math.Round(day.Temperature.Max)}°C");
+    Console.WriteLine($"Wind speed will be: {day.WindSpeed} m/s");
+    Console.WriteLine($"Wind direction will be: {day.WindDirectionLong} ({day.WindDirectionShort})");
     Console.WriteLine($"The weather conditions will be: {day.Weather.Description}");
     Console.WriteLine($"Probability for precipitation: {day.PrecipitationProbability}%");
+    Console.WriteLine($"The moon phase will be: {day.MoonPhase}\n");
 }
 ```
 This will produce the following result:
 ```
-The current weather in Lovech is 11.43 degrees with overcast clouds.
+The current weather in Lovech is 17°C degrees with clear sky.
 
 The weather forecast for the next 7 days is:
 
-The weather for: 02.04.2022
-Min temperature: 7.03
-Max temperature: 20.52
-The weather conditions will be: heavy intensity rain
-Probability for precipitation: 100%
+The weather for: 15.04.2022
+Min temperature: 9°C
+Max temperature: 22°C
+Wind speed will be: 2.2 m/s
+Wind direction will be: South-southwest (SSW)
+The weather conditions will be: clear sky
+Probability for precipitation: 0%
+The moon phase will be: Full Moon
 .
 .
 .
-The weather for: 07.04.2022
-Min temperature: 9.34
-Max temperature: 17.91
-The weather conditions will be: moderate rain
-Probability for precipitation: 95%
+The weather for: 21.04.2022
+Min temperature: 5°C
+Max temperature: 17°C
+Wind speed will be: 7.63 m/s
+Wind direction will be: West (W)
+The weather conditions will be: few clouds
+Probability for precipitation: 0%
+The moon phase will be: Waning Gibbous
 ```
 
 ## Installation
@@ -77,12 +86,12 @@ You can install the NuGet library into your project using:
 
 Package Manager:
 ```
-Install-Package SimpleWeather -Version 2.0.0
+Install-Package SimpleWeather -Version 2.5.0
 ```
 
 .NET CLI:
 ```
-dotnet add package SimpleWeather --version 2.0.0
+dotnet add package SimpleWeather --version 2.5.0
 ```
 
 ## License

@@ -38,14 +38,37 @@ namespace SimpleWeather
                 Weather = new Weather(data.SelectToken("weather"));
             }
         }
-
+        /// <summary>
+        /// Time of the forecasted data, UTC
+        /// </summary>
         public DateTime DT { get; }
+        /// <summary>
+        /// Temperature
+        /// </summary>
         public double Temperature { get; }
+        /// <summary>
+        /// Temperature. This accounts for the human perception of weather.
+        /// </summary>
         public double FeelsLike { get; }
+        /// <summary>
+        /// Atmospheric pressure on the sea level, hPa
+        /// </summary>
         public double Pressure { get; }
+        /// <summary>
+        /// Humidity, %
+        /// </summary>
         public double Humidity { get; }
+        /// <summary>
+        ///  Atmospheric temperature (varying according to pressure and humidity) below which water droplets begin to condense and dew can form.
+        /// </summary>
         public double DewPoint { get; }
+        /// <summary>
+        /// UV index
+        /// </summary>
         public double Uvi { get; }
+        /// <summary>
+        /// Cloudiness, %
+        /// </summary>
         public double Clouds { get; }
         public double Visibility { get; }
         /// <summary>
@@ -60,7 +83,13 @@ namespace SimpleWeather
         /// Wind direction, degrees (meteorological)
         /// </summary>
         public double WindDegee { get; }
+        /// <summary>
+        /// Short wind direction represented by a string (N, E, S, W, etc.)
+        /// </summary>
         public string? WindDirectionShort { get; }
+        /// <summary>
+        /// Long wind direction represented by a string (North, East, South, West, etc.)
+        /// </summary>
         public string? WindDirectionLong { get; }
         /// <summary>
         /// Probability of precipitation in percents. The values of the parameter vary between 0 and 100

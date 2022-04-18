@@ -26,7 +26,13 @@ namespace SimpleWeather
         /// Wind direction, degrees (meteorological)
         /// </summary>
         public double Degree { get; }
+        /// <summary>
+        /// Short wind direction represented by a string (N, E, S, W, etc.)
+        /// </summary>
         public string WindDirectionShort { get; }
+        /// <summary>
+        /// Long wind direction represented by a string (North, East, South, West, etc.)
+        /// </summary>
         public string WindDirectionLong { get; }
         /// <summary>
         /// Wind gust. Default Unit: meter/sec

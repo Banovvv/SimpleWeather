@@ -68,8 +68,14 @@ namespace SimpleWeather
         /// Wind direction, degrees (meteorological)
         /// </summary>
         public double WindDegee { get; }
-        public string? WindDirectionShort { get; }
-        public string? WindDirectionLong { get; }
+        /// <summary>
+        /// Short wind direction represented by a string (N, E, S, W, etc.)
+        /// </summary>
+        public string WindDirectionShort { get; }
+        /// <summary>
+        /// Long wind direction represented by a string (North, East, South, West, etc.)
+        /// </summary>
+        public string WindDirectionLong { get; }
         public double Clouds { get; }
         public double Uvi { get; }
         /// <summary>

@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{43238191
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleWeather.Test", "Tests\SimpleWeather.Test\SimpleWeather.Test.csproj", "{34B0C098-72DB-4ECA-98AD-CF5FB75C74D8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleWeather.Tests", "Tests\SimpleWeather.Tests\SimpleWeather.Tests.csproj", "{B5D2F3BC-7488-4833-A8A0-DC0A39CC9A5F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{34B0C098-72DB-4ECA-98AD-CF5FB75C74D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34B0C098-72DB-4ECA-98AD-CF5FB75C74D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34B0C098-72DB-4ECA-98AD-CF5FB75C74D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5D2F3BC-7488-4833-A8A0-DC0A39CC9A5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5D2F3BC-7488-4833-A8A0-DC0A39CC9A5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5D2F3BC-7488-4833-A8A0-DC0A39CC9A5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5D2F3BC-7488-4833-A8A0-DC0A39CC9A5F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +38,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{F7F709EA-6002-464A-89CA-30A70589A048} = {7E3E27DE-18A4-409D-8BA6-D498A1CCE5C3}
 		{34B0C098-72DB-4ECA-98AD-CF5FB75C74D8} = {43238191-67F0-40BE-A3CF-AF82788D6064}
+		{B5D2F3BC-7488-4833-A8A0-DC0A39CC9A5F} = {43238191-67F0-40BE-A3CF-AF82788D6064}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {808C9762-04C4-43BB-A394-D0A1D35AFF39}

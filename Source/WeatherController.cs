@@ -2,7 +2,7 @@
 
 namespace SimpleWeather
 {
-    public class WeatherController
+    public class WeatherController : IDisposable
     {
         private readonly string _baseUrl = $"https://api.openweathermap.org/data/2.5/";
         private readonly HttpClient _httpClient;
@@ -26,15 +26,13 @@ namespace SimpleWeather
         /// <returns>A <see cref="CurrentWeather"/> object</returns>
         public async Task<CurrentWeather> GetCurrentWeather(string cityName, string units = "metric")
         {
-            var baseAddress = new Uri(_baseUrl + "weather?q=" + cityName + "&appid=" + _configuration["openWeatherApiKey"] + $"&units={units}");
+            var baseAddress = new Uri($"{_baseUrl}weather?q={cityName}&appid={_configuration["openWeatherApiKey"]}&units={units}");
 
             var weatherResponse = await _httpClient.GetAsync(baseAddress);
 
             var jsonContent = await weatherResponse.Content.ReadAsStringAsync();
 
-            var currentWeather = new CurrentWeather(jsonContent);
-
-            return currentWeather;
+            return new CurrentWeather(jsonContent);
         }
 
         /// <summary>
@@ -46,15 +44,13 @@ namespace SimpleWeather
         /// <returns>A <see cref="WeatherForecast"/> object</returns>
         public async Task<WeatherForecast> GetWeatherForecast(double lat, double lon, string units = "metric")
         {
-            var baseAddress = new Uri(_baseUrl + "onecall?lat=" + lat + "&lon=" + lon + "&exclude=minutely" + "&appid=" + _configuration["openWeatherApiKey"] + $"&units={units}");
+            var baseAddress = new Uri($"{_baseUrl}onecall?lat={lat}&lon={lon}&exclude=minutely&appid={_configuration["openWeatherApiKey"]}&units={units}");
 
             var weatherResponse = await _httpClient.GetAsync(baseAddress);
 
             var jsonContent = await weatherResponse.Content.ReadAsStringAsync();
 
-            var weatherForecast = new WeatherForecast(jsonContent);
-
-            return weatherForecast;
+            return new WeatherForecast(jsonContent);
         }
 
         /// <summary>
@@ -69,15 +65,18 @@ namespace SimpleWeather
             var lat = currentCity.Coordinates.Latitude;
             var lon = currentCity.Coordinates.Longitude;
 
-            var baseAddress = new Uri(_baseUrl + "onecall?lat=" + lat + "&lon=" + lon + "&exclude=minutely" + "&appid=" + _configuration["openWeatherApiKey"] + $"&units={units}");
+            var baseAddress = new Uri($"{_baseUrl}onecall?lat={lat}&lon={lon}&exclude=minutely&appid={_configuration["openWeatherApiKey"]}&units={units}");
 
             var weatherResponse = await _httpClient.GetAsync(baseAddress);
 
             var jsonContent = await weatherResponse.Content.ReadAsStringAsync();
 
-            var weatherForecast = new WeatherForecast(jsonContent);
+            return new WeatherForecast(jsonContent);
+        }
 
-            return weatherForecast;
+        public void Dispose()
+        {
+            _httpClient.Dispose();
         }
     }
 }

@@ -74,9 +74,6 @@ namespace SimpleWeather
             return new WeatherForecast(jsonContent);
         }
 
-        public void Dispose()
-        {
-            _httpClient.Dispose();
-        }
+        public void Dispose() => _httpClient.Dispose();
     }
 }
